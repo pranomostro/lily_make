@@ -8,8 +8,7 @@ It is quite simple and hackable, but not as flexible as the
 original cmake building process.
 
 The standard build process uses cmake, which introduces a C++
-dependency and is more flexible than this process (includes the
-possibility to use postgres and apache.
+dependency and is includes the possibility to use postgres and apache.
 
 This process only depends on make and few shell utilities
 like mv, rm and ar.
