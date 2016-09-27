@@ -9,7 +9,7 @@ AR=ar
 ARFLAGS=-rcs
 
 CC=cc
-CFLAGS=-DLILY_VERSION_DIR=\"0_17\" -Isrc
+CFLAGS=-DLILY_VERSION_DIR=\"0.17\" -Isrc
 LDFLAGS=-ldl -Isrc
 
 TARGET=lily
