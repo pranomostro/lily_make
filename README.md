@@ -24,4 +24,4 @@ Using this build process
 License
 =======
 
-./COPYING
+./LICENSE
