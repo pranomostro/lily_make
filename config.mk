@@ -1,20 +1,14 @@
-#configure the building of lily
-
 PREFIX=/usr/local
 
-RM=rm -f
-MV=mv
-
+CC=cc
 AR=ar
+RANLIB=ranlib
+
+CFLAGS=-Wall -Wextra -std=c11 -pedantic -O2 -DLILY_VERSION_DIR=\"1.0\" -Isrc
+LDFLAGS=-s -ldl -Isrc
 ARFLAGS=-rcs
 
-CC=cc
-CFLAGS=-DLILY_VERSION_DIR=\"1.0\" -Isrc
-LDFLAGS=-ldl -Isrc
-
-TARGET=lily
-LIB=src/liblily.a
-
-SRC=src/lily_alloc.c src/lily_api_value.c src/lily_buffer_u16.c src/lily_code_iter.c src/lily_emitter.c src/lily_expr.c src/lily_generic_pool.c src/lily_lexer.c src/lily_library.c src/lily_move.c src/lily_msgbuf.c src/lily_options.c src/lily_parser.c src/lily_pkg_builtin.c src/lily_pkg_random.c src/lily_pkg_sys.c src/lily_pkg_time.c src/lily_raiser.c src/lily_string_pile.c src/lily_symtab.c src/lily_type_maker.c src/lily_type_system.c src/lily_utf8.c src/lily_value_stack.c src/lily_vm.c src/st.c
-
+BIN=lily
+SRC=run/lily.c
 OBJ=$(SRC:.c=.o)
+CONF=config.mk
