@@ -1,37 +1,21 @@
 include config.mk
 
 HDR= \
-	src/dyna_builtin.h \
-	src/dyna_random.h \
-	src/dyna_sys.h \
-	src/dyna_time.h \
-	src/extras_builtin.h \
-	src/extras_random.h \
-	src/extras_time.h \
 	src/lily_alloc.h \
-	src/lily_api_dyna.h \
-	src/lily_api_embed.h \
-	src/lily_api_msgbuf.h \
-	src/lily_api_value.h \
 	src/lily_buffer_u16.h \
 	src/lily_config.h \
 	src/lily_core_types.h \
 	src/lily_emitter.h \
 	src/lily_expr.h \
 	src/lily_generic_pool.h \
+	src/lily.h \
 	src/lily_int_code_iter.h \
 	src/lily_int_opcode.h \
 	src/lily_keyword_table.h \
 	src/lily_lexer.h \
 	src/lily_library.h \
-	src/lily_move.h \
-	src/lily_options.h \
 	src/lily_parser.h \
 	src/lily_parser_tok_table.h \
-	src/lily_pkg_builtin.h \
-	src/lily_pkg_random.h \
-	src/lily_pkg_sys.h \
-	src/lily_pkg_time.h \
 	src/lily_raiser.h \
 	src/lily_string_pile.h \
 	src/lily_symtab.h \
@@ -39,12 +23,14 @@ HDR= \
 	src/lily_type_system.h \
 	src/lily_utf8.h \
 	src/lily_value_flags.h \
+	src/lily_value_raw.h \
 	src/lily_value_stack.h \
 	src/lily_value_structs.h \
-	src/lily_vm.h
+	src/lily_vm.h \
 
 LIBLILY=src/liblily.a
 LIBLILYSRC= \
+	src/csiphash.c \
 	src/lily_alloc.c \
 	src/lily_api_value.c \
 	src/lily_buffer_u16.c \
@@ -54,11 +40,10 @@ LIBLILYSRC= \
 	src/lily_generic_pool.c \
 	src/lily_lexer.c \
 	src/lily_library.c \
-	src/lily_move.c \
 	src/lily_msgbuf.c \
-	src/lily_options.c \
 	src/lily_parser.c \
 	src/lily_pkg_builtin.c \
+	src/lily_pkg_core.c \
 	src/lily_pkg_random.c \
 	src/lily_pkg_sys.c \
 	src/lily_pkg_time.c \
@@ -70,7 +55,7 @@ LIBLILYSRC= \
 	src/lily_utf8.c \
 	src/lily_value_stack.c \
 	src/lily_vm.c \
-	src/st.c
+	src/st.c \
 
 LIB=$(LIBLILY)
 LIBLILYOBJ=$(LIBLILYSRC:.c=.o)
