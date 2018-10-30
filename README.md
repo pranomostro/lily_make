@@ -21,4 +21,4 @@ Using this build process
 License
 =======
 
-See [./LICENSE](./LICENSE).
+See [LICENSE](./LICENSE).
