@@ -16,6 +16,8 @@ HDR= \
 	src/lily_library.h \
 	src/lily_parser.h \
 	src/lily_parser_tok_table.h \
+	src/lily_pkg_introspect_bindings.h \
+	src/lily_pkg_math_bindings.h \
 	src/lily_raiser.h \
 	src/lily_string_pile.h \
 	src/lily_symtab.h \
@@ -29,8 +31,7 @@ HDR= \
 	src/lily_vm.h \
 
 LIBLILY=src/liblily.a
-LIBLILYSRC= \
-	src/csiphash.c \
+LIBLILYSRC= src/csiphash.c \
 	src/lily_alloc.c \
 	src/lily_api_value.c \
 	src/lily_buffer_u16.c \
@@ -44,6 +45,8 @@ LIBLILYSRC= \
 	src/lily_parser.c \
 	src/lily_pkg_builtin.c \
 	src/lily_pkg_core.c \
+	src/lily_pkg_introspect.c \
+	src/lily_pkg_math.c \
 	src/lily_pkg_random.c \
 	src/lily_pkg_sys.c \
 	src/lily_pkg_time.c \
@@ -55,7 +58,7 @@ LIBLILYSRC= \
 	src/lily_utf8.c \
 	src/lily_value_stack.c \
 	src/lily_vm.c \
-	src/st.c \
+	src/st.c
 
 LIB=$(LIBLILY)
 LIBLILYOBJ=$(LIBLILYSRC:.c=.o)
